@@ -31,7 +31,16 @@ if ( ! class_exists( 'Word_Filter' ) ) {
 
         function word_filter() {
             ?>
-            Hello world.
+            <div class="wrap">
+                <h1>Word Filter</h1>
+                <form method="POST">
+                    <label for="plugin_words_to_filter"><p>Enter a <strong>comma-separated</strong> list of words to filter from your site's content.</p></label>
+                    <div class="word-filter__flex-container">
+                        <textarea name="plugin_words_to_filter" id="plugin_words_to_filter" placeholder="bad, mean, awful, horrible"></textarea>
+                    </div>
+                    <input type="submit" name="submit" id="submit" class="button button-primary" value="Save Changes">
+                </form>
+            </div>
             <?php
         }
 
