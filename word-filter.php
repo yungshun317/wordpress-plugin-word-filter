@@ -34,7 +34,7 @@ if ( ! class_exists( 'Word_Filter' ) ) {
 
         function replacement_field_html() {
             ?>
-            <input type="text" name="replacement_text" value="<?php echo esc_attr( get_option( 'replacement_text', '***' )) ?>">
+            <input type="text" name="replacement_text" value="<?php echo esc_attr( get_option( 'replacement_text', '****' )) ?>">
             <p class="description">Leave blank to simply remove the filtered words.</p>
             <?php
         }
@@ -53,7 +53,7 @@ if ( ! class_exists( 'Word_Filter' ) ) {
         }
 
         function handle_form() {
-            if ( wp_verify_nonce( $_POST['word_filer_nonce'] , 'save_filter_words' ) AND current_user_can( 'manage_options' ) ) {
+            if ( wp_verify_nonce( $_POST['word_filter_nonce'] , 'save_filter_words' ) AND current_user_can( 'manage_options' ) ) {
                 update_option( 'plugin_words_to_filter', sanitize_text_field( $_POST['plugin_words_to_filter'] ) ); ?>
                 <div class="updated">
                     <p>Your filtered words were saved.</p>
